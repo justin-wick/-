@@ -31,8 +31,9 @@ namespace 草堂街道社会智能数据管理系统
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
@@ -61,9 +62,6 @@ namespace 草堂街道社会智能数据管理系统
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.添加人员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cardid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.district = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +81,9 @@ namespace 草堂街道社会智能数据管理系统
             this.released = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dope = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.添加人员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -91,6 +92,7 @@ namespace 草堂街道社会智能数据管理系统
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.checkBox15);
             this.groupBox1.Controls.Add(this.checkBox14);
             this.groupBox1.Controls.Add(this.checkBox13);
@@ -124,6 +126,16 @@ namespace 草堂街道社会智能数据管理系统
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "人员管理";
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Location = new System.Drawing.Point(698, 87);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(48, 16);
+            this.checkBox15.TabIndex = 26;
+            this.checkBox15.Text = "党员";
+            this.checkBox15.UseVisualStyleBackColor = true;
             // 
             // checkBox14
             // 
@@ -381,8 +393,8 @@ namespace 草堂街道社会智能数据管理系统
             // 
             // dgv
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -416,34 +428,6 @@ namespace 草堂街道社会智能数据管理系统
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(978, 522);
             this.dgv.TabIndex = 0;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.添加人员ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 25);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 添加人员ToolStripMenuItem
-            // 
-            this.添加人员ToolStripMenuItem.Name = "添加人员ToolStripMenuItem";
-            this.添加人员ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.添加人员ToolStripMenuItem.Tag = "add";
-            this.添加人员ToolStripMenuItem.Text = "添加人员";
-            this.添加人员ToolStripMenuItem.Click += new System.EventHandler(this.添加人员ToolStripMenuItem_Click);
-            // 
-            // checkBox15
-            // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(698, 87);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(48, 16);
-            this.checkBox15.TabIndex = 26;
-            this.checkBox15.Text = "党员";
-            this.checkBox15.UseVisualStyleBackColor = true;
             // 
             // name
             // 
@@ -585,6 +569,34 @@ namespace 草堂街道社会智能数据管理系统
             this.dope.ReadOnly = true;
             this.dope.Visible = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.添加人员ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 25);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 添加人员ToolStripMenuItem
+            // 
+            this.添加人员ToolStripMenuItem.Name = "添加人员ToolStripMenuItem";
+            this.添加人员ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.添加人员ToolStripMenuItem.Tag = "add";
+            this.添加人员ToolStripMenuItem.Text = "添加人员";
+            this.添加人员ToolStripMenuItem.Click += new System.EventHandler(this.添加人员ToolStripMenuItem_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(735, 112);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "导出结果";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ppmanager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -660,5 +672,6 @@ namespace 草堂街道社会智能数据管理系统
         private DataGridViewTextBoxColumn released;
         private DataGridViewTextBoxColumn poor;
         private DataGridViewTextBoxColumn dope;
+        private Button button2;
     }
 }

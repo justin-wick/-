@@ -111,5 +111,60 @@ namespace 草堂街道社会智能数据管理系统
         {
             commUse.district_gird_block(sswg_cb, ssyl_cb, "grid", "block");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Excel.ExportExcel excel = new Excel.ExportExcel();
+
+            excel.CreateExcel();
+            excel.CreateWorkSheet("人员导出信息");
+            // 第一行加粗
+            excel.FontStyle(1, 1, 1, 10, true, false, Excel.UnderlineStyle.无下划线);
+            //p.CellsUnite(1, 1, 1, 5);
+            // 表格数据
+
+            // Excel第一行数据
+            excel.WriteData("姓名", 1, 1);
+            excel.WriteData("所属社区", 1, 2);
+            excel.WriteData("所属网络", 1, 3);
+            excel.WriteData("身份证", 1, 4);
+            excel.WriteData("所属院落", 1, 5);
+            excel.WriteData("居住地址", 1, 6);
+            excel.WriteData("是否党员", 1, 7);
+            excel.WriteData("重要人员", 1, 8);
+            excel.WriteData("清洁人员", 1, 9);
+            excel.WriteData("境外人员", 1, 10);
+
+            DataTable outDatatable = new DataTable();
+            outDatatable.Columns.Add("name");
+            outDatatable.Columns.Add("district");
+            outDatatable.Columns.Add("grid");
+            outDatatable.Columns.Add("cardid");
+            outDatatable.Columns.Add("ad");
+            outDatatable.Columns.Add("member");
+            outDatatable.Columns.Add("vip");
+            outDatatable.Columns.Add("clear");
+            outDatatable.Columns.Add("jwry");
+
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                
+                DataRow newRow = outDatatable.NewRow();
+                newRow["name"] = dgv.Rows[i].Cells["name"].Value;
+                newRow["district"] = dgv.Rows[i].Cells["district"].Value;
+                newRow["grid"] = dgv.Rows[i].Cells["grid"].Value;
+                newRow["cardid"] = dgv.Rows[i].Cells["cardid"].Value;
+                newRow["ad"] = dgv.Rows[i].Cells["ad"].Value;
+                newRow["member"] = dgv.Rows[i].Cells["member"].Value;
+                newRow["vip"] = dgv.Rows[i].Cells["vip"].Value;
+                newRow["clear"] = dgv.Rows[i].Cells["clear"].Value;
+                newRow["jwry"] = dgv.Rows[i].Cells["jwry"].Value;
+
+                outDatatable.Rows.Add(newRow);
+            }
+
+            excel.WriteData(outDatatable, 2, 1);
+            excel.Close(true, "bbb.xlsx");
+        }
     }
 }
